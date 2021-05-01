@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<meta charset="UTF-8">
+<title>Personas</title>
+ 
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+ 
+        <h1 th:text=${titulo}></h1>
+    <a class="btn btn-primary" th:href=@{/usuarios/crear} th:text="'Crear usuario'" title="Crear Nuevo Usuario"></a>
+    
+    
+    </div>
+    <div class="container mt-4">
+        <table class="table">
+            <thead>
+            <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Estado</th>
+            <th>NobreUsuario</th>
+            </tr>                
+            </thead>
+            <tbody>
+                <tr th:each="usuario : ${usuarios}">
+                    <td th:text = "${usuario.codigo}"></td>
+                    <td th:text = "${usuario.nombre}"></td>
+                    <td th:text = "${usuario.apellido}"></td>
+                    <td th:text = "${usuario.estado}"></td>
+                    <td th:text = "${usuario.nombreUsuario}"></td>
+                    <td>
+                    <a class="btn btn-warning" th:href = "@{/usuarios/modificar/} + ${usuario.codigo}">Editar</a>
+                    <a class="btn btn-danger" th:href= "@{/usuarios/eliminar/} + ${usuario.codigo}"
+                    onclick="return confirm ('¿Desea eliminar este usuario?')">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

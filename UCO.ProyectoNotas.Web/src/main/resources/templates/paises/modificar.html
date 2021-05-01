@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+ 
+<html xmlns:th="https://www.thymeleaf.org">
+ 
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+ 
+    <div class="container">
+        <div class="card bg-ligth">
+            <div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+            <div class="card-body">
+                <form  th:action = "@{/paises/actualizar}"  th:object="${paises}" method="post">
+                    <div class="form-group row">
+                        <input type="hidden" th:field="*{codigo}">
+                        <label class="col-md-2" for="Nombre">Nombre</label> 
+                        <input type="text" th:field="*{nombre}" class="form-control form-control-sm col-md-6" id="text"
+                            placeholder="Nombre del Pais"> <small></small>
+                    </div>
+                    <div class="card-footer">
+                    <input type="submit" class="btn btn-primary" value="Modificar"> 
+                    </div>
+                  
+ 
+                </form>
+                  <div class="card-footer">
+                        <input type="submit" class="btn btn-primary" value="No crear" th:href = "@{/paises/listar}">
+                    </div>
+            </div>
+        </div>
+    </div>
+ 
+    
+</body>
+</html>

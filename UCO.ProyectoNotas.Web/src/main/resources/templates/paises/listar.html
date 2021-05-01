@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<meta charset="UTF-8">
+<title>Paises</title>
+ 
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+ 
+        <h1 th:text=${titulo}></h1>
+    <a class="btn btn-primary" th:href=@{/paises/crear} th:text="'Crear Pais'" title="Crear Nuevo Pais"></a>
+    
+    
+    </div>
+    <div class="container mt-4">
+        <table class="table">
+            <thead>
+            <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+            </tr>                
+            </thead>
+            <tbody>
+                <tr th:each="pais : ${paises}">
+                    <td th:text = "${pais.codigo}"></td>
+                    <td th:text = "${pais.nombre}"></td>
+                    <td>
+                    <a class="btn btn-warning" th:href = "@{/paises/modificar/} + ${pais.codigo}">Editar</a>
+                    <a class="btn btn-danger" th:href= "@{/paises/eliminar/} + ${pais.codigo}"
+                    onclick="return confirm ('Dese Eliminar El Pais')">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

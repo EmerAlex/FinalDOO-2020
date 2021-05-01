@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+ 
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+ 
+    <div class="container">
+        <div class="card bg-ligth">
+            <div class="card-body">
+                <form  th:action = "@{/usuarios/actualizar}"  th:object="${usuarios}" method="post">
+                    <div class="form-group row">
+                        <input type="hidden" th:field="*{codigo}">
+                        <label class="col-md-2" for="Nombre">Nombre</label> 
+                        <input type="text" th:field="*{nombre}" class="form-control form-control-sm col-md-6" id="nombre"
+                            placeholder="Nombre del Pais"> <small></small>
+                        <label class="col-md-2" for="Apellido">Apellido</label> 
+                        <input type="text" th:field="*{apellido}" class="form-control form-control-sm col-md-6" id="apellido"
+                            placeholder="Nombre del Pais"> <small></small>
+                        <label class="col-md-2" for="Estado">Estado</label> 
+                        <select th:field="*{estado}" class="form-control form-control-sm col-md-6" id="estado">
+                            <option value="true">Activo</option>
+                            <option value="false">Inactivo</option>
+                         </select>
+                        <label class="col-md-2" for="NombreUsuario">NombreUsuario</label> 
+                        <input type="text" th:field="*{nombreUsuario}" class="form-control form-control-sm col-md-6" id="nobreUsuario"
+                            placeholder="Nombre del Pais"> <small></small>
+                        
+                        
+                    </div>
+                    <div class="card-footer">
+                    <input type="submit" class="btn btn-primary" value="Modificar"> 
+                    </div>
+ 
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+</html>

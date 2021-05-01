@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+
+<script>
+ 
+function Inicio(){
+    setTimeout("TerminarCarga()",2000)
+    
+}
+ 
+function TerminarCarga(){
+    var bar=document.getElementById("barra")
+    bar.style.width="400px"
+     self.location='login'
+    
+    
+}
+ 
+</script>
+ 
+<style type="text/css">
+#es{
+width:400px;
+height:20px;
+-webkit-border-radius:2px;
+position:relative;
+margin:auto;
+top:300px;
+border:1px solid grey;
+border-radius:20px 20px 20px 20px;
+margin-top:-300px;
+box-shadow:opx 5px 35px white;
+ 
+
+}
+#barra{
+position:relative;
+background:#C9CCCC;
+width:0px;
+height:20px;
+-webkit-animation:es 2s ease;
+-webkit-transition:all ease 2s;
+border-radius:20px 20px 20px 20px;
+}
+@-webkit-keyframes es{
+from{width:0px;}
+to{width:400px;}
+}
+ 
+#titulo{
+margin-top:300px;
+color:white;
+font-size:50px;
+text-align:center;
+font-family:“Helvetica Neue”, Helvetica, Arial, sans-serif;
+ 
+}
+ 
+</style>
+</head>
+<body  bgcolor="#121C2A" onLoad="Inicio()">
+ 
+
+<div id="titulo">Empecemos</div>
+<br><br>
+<div id="es">
+    <div id="barra">
+   </div>
+</div>
+ 
+</body>
+</html>

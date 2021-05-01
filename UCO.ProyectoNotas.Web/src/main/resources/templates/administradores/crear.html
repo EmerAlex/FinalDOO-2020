@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<meta charset="UTF-8">
+</head>
+<body>
+    <div class="container">
+        <div class="card bg-ligth">
+            <div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+            <div class="card-body">
+                <form th:action="@{/administradores/guardar}" th:object="${administradores}"
+                    method="post">
+                    <div class="form-group row">
+                        <label class="col-md-2" for="codigoSuperAdministrador">Codigo super administrador:</label> <input
+                            type="text" th:field="*{codigoSuperAdministrador}"
+                            class="form-control form-control-sm col-md-6" id="codigoSuperAdministrador"
+                            placeholder="Codigo super administrador" required> <small></small>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="Nombre">Nombre:</label> <input
+                            type="text" th:field="*{nombre}"
+                            class="form-control form-control-sm col-md-6" id="nombre"
+                            placeholder="Nombre del Usuario" required> <small></small>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="Apellido">Apellido:</label> <input
+                            type="text" th:field="*{apellido}"
+                            class="form-control form-control-sm col-md-6" id="apellido"
+                            placeholder="Apellido del Usuario" required> <small></small>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="Estado">Estado:</label> 
+                        <select th:field="*{estado}" class="form-control form-control-sm col-md-6" id="estado">
+                            <option value="true">Activo</option>
+                            <option value="false">Inactivo</option>
+                         </select>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="NombreUsuario">Nombre de usuario:</label> <input
+                            type="text" th:field="*{nombreUsuario}"
+                            class="form-control form-control-sm col-md-6" id="nombreUsuario"
+                            placeholder="NombreUsuario del Usuario" required> <small></small>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="Contraseña">Contraseña:</label> <input
+                            type="text" th:field="*{contraseña}"
+                            class="form-control form-control-sm col-md-6" id="contrasena"
+                            placeholder="NombreUsuario del Contrasena" required> <small></small>
+                    </div>
+ 
+ 
+                    <div class="card-footer">
+                        <input type="submit" class="btn btn-primary" value="crear">
+ 
+                    </div>
+ 
+                </form>
+                <div>
+	                <input onclick='javascript:window.history.back()' value='Volver a la lista' class="btn btn-primary" type='button' />
+                
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+</html>

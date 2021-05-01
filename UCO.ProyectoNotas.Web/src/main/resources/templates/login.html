@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicia Sesión</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+ 
+</head>
+ 
+<body>
+    <form action="index.html" class="form-box animated fadeInUp" th:action="@{/login}" th:object="${loginForm}" method="post">
+        <h1 class="form-title">Inicio de Sesión</h1>
+        <input  type="text" id="nombreUsuario" name="nombreUsuario" placeholder="nombre Usuario" autofocus="autofocus" required >
+        <input  type="password" placeholder="Contraseña" id="Contraseña" name="Contraseña" required>
+        <button type="submit" >
+            Entrar
+        </button>
+        <p id="error" th:if="${invalidCredentials}" class="error">Usuario o contraseña incorrectos</p>
+    </form>
+</body>
+ 
+</html>
